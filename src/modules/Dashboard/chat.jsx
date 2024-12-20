@@ -38,7 +38,7 @@ export const Profiles = {
   }
 }
 
-const Chat = () => {
+const Chat = ({ toggleDashboard }) => {
 
   const [selectedChat, setSelectedChat] = React.useState(null);
 
@@ -51,7 +51,7 @@ const Chat = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='w-72 '>
+    <div className='w-full sm:w-72 overflow-auto z-20'>
       <div className='border-2 border-blue-400 outline-[#accffe] bg-[#accffe] divide-blue-400'>
       <div className='flex flex-col items-center p-4 border-b-2 border-blue-400 mb-8'>
             <Avatar alt="icon" src={Icon} sx={{ width: 100, height: 100 }} />
@@ -64,7 +64,10 @@ const Chat = () => {
           <div 
             key={profile.id} 
             className='flex flex-col gap-4 cursor-pointer border-b-2 hover:border-2 rounded-lg'
-            onClick={() => navigate(`/chat/${profile.id}`)} // Modified line
+            onClick={() => {
+              navigate(`/chat/${profile.id}`);
+              toggleDashboard();
+            }}
           > 
           <div className='flex flex-row gap-4 items-center p-4 hover:scale-105'>
             <Avatar alt="icon" src={profile.icon} sx={{ width: 100, height: 100 }} />

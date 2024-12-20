@@ -3,6 +3,7 @@ import ChatComponent from "./modules/Chat";
 import Dashboard from "./modules/Dashboard";
 import Form from "./modules/Form";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./modules/Home";
 
 
 const ProtectedRoutes = ({ children }) => {
@@ -29,6 +30,7 @@ function App() {
             <DefaultLayout />
         }
       >
+        <Route path="/" element={<Home />} />
         <Route path="form" element={<Form />} /> 
         <Route path="chat/:id" element={<ChatComponent />} />
       </Route>
