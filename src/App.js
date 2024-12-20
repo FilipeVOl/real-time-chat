@@ -1,3 +1,5 @@
+import DefaultLayout from "./layouts/DefaultLayout";
+import ChatComponent from "./modules/Chat";
 import Dashboard from "./modules/Dashboard";
 import Form from "./modules/Form";
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -24,11 +26,14 @@ function App() {
       <Route
         path="/"
         element={
-          // <ProtectedRoutes>
-            <Dashboard />
-          // </ProtectedRoutes>
+            <DefaultLayout />
         }
-      />
+      >
+        <Route path="form" element={<Form />} /> 
+        <Route path="chat/:id" element={<ChatComponent />} />
+      </Route>
+
+
       <Route
         path="/users/sign_in"
         element={

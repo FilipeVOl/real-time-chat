@@ -16,8 +16,8 @@ const Form = ({ isSignInPage = false }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-screen bg-[#accffe] flex items-center justify-center">
-      <div className="bg-white w-[600px] h-auto p-32 gap-14 shadow-lg rounded-lg flex flex-col justify-center items-center">
+    <div className="w-screen bg-[#accffe] flex items-center justify-center">
+      <div className="bg-white w-[600px] p-32 gap-14 shadow-lg rounded-lg flex flex-col justify-center items-center">
         <div>
           <div className="text-4xl font-extrabold">
             Welcome {isSignInPage && "Back"}
